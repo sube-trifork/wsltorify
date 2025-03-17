@@ -376,12 +376,7 @@ stop() {
         # restore file with resolvconf if exists otherwise copy the original
         # file from backup directory.
         printf "%s\\n" "Restore default DNS"
-
-        if hash resolvconf 2>/dev/null; then
-            resolvconf -u
-        else
-            cp "${backup_dir}/resolv.conf.backup" /etc/resolv.conf
-        fi
+        cp "${backup_dir}/resolv.conf.backup" /etc/resolv.conf
 
         # enable IPv6
         printf "%s\\n" "Enable IPv6"
