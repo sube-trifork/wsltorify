@@ -1,3 +1,12 @@
+```plaintext /_/
+ __      __  _________.____     __               .__  _____       
+/  \    /  \/   _____/|    |  _/  |_  ___________|__|/ ____\__.__.
+\   \/\/   /\_____  \ |    |  \   __\/  _ \_  __ \  \   __<   |  |
+ \        / /        \|    |___|  | (  <_> )  | \/  ||  |  \___  |
+  \__/\  / /_______  /|_______ \__|  \____/|__|  |__||__|  / ____|
+       \/          \/         \/                           \/
+```
+
 <p align="center">
 Transparent Proxy through Tor for WSL(Debian deriatives)
 </p>
@@ -209,14 +218,6 @@ tcpdump -n -f -p -i eth0 not arp and not host IP.TO.TOR.GUARD
 You are not supposed to see any output other than the first two header lines. You can remove `and not host IP` to see how it would look like otherwise.
 
 See: [Transparent Proxy: Checking for leaks](https://gitlab.torproject.org/legacy/trac/-/wikis/doc/TransparentProxy#checking-for-leaks)
-
----
-
-## Demo
-
-[![asciicast](https://asciinema.org/a/386518.svg)](https://asciinema.org/a/386518)
-
-Warning: the example video might refer to an older version.
 
 ---
 
