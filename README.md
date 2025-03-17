@@ -1,26 +1,13 @@
 <p align="center">
-<img src="img/logo.png" alt="kalitorify logo">
+Transparent Proxy through Tor for WSL(Debian deriatives)
 </p>
 
-<p align="center">
-Transparent Proxy through Tor for Kali Linux
-</p>
 
-<p align="center">
-<a href="https://github.com/brainfucksec/kalitorify/commits/master"><img src="https://img.shields.io/badge/version-1.29.0-blue"></a>
-<a href="https://github.com/brainfucksec/kalitorify/blob/master/README.md"><img src="https://img.shields.io/badge/docs-passing-brightgreen.svg"></a>
-<a href="https://github.com/brainfucksec/kalitorify/blob/master/LICENSE"><img src="https://img.shields.io/github/license/brainfucksec/kalitorify.svg"></a>
-<a href="https://github.com/brainfucksec/kalitorify/graphs/contributors"><img src="https://img.shields.io/github/contributors/brainfucksec/kalitorify.svg"></a>
-<a href="https://github.com/brainfucksec/kalitorify/network/members"><img src="https://img.shields.io/github/forks/brainfucksec/kalitorify.svg"></a>
-</p>
+## About wsltorify
 
-## About kalitorify
+**wsltorify** is a shell script for WSL(Debian deriatives) which use [iptables](https://www.netfilter.org/projects/iptables/index.html) settings to create a **Transparent Proxy through the Tor Network**, the program also allows you to perform various checks like checking the Tor Exit Node (i.e. your public IP address when you are under Tor proxy), or if Tor has been configured correctly checking service and network settings.
 
-**kalitorify** is a shell script for [Kali Linux](https://www.kali.org/) which use [iptables](https://www.netfilter.org/projects/iptables/index.html) settings to create a **Transparent Proxy through the Tor Network**, the program also allows you to perform various checks like checking the Tor Exit Node (i.e. your public IP address when you are under Tor proxy), or if Tor has been configured correctly checking service and network settings.
-
-In simple terms, with kalitorify you can redirect all traffic of your Kali Linux operating system through the Tor Network.
-
-**This program was created for the Kali Linux operating system (Kali Linux rolling 2022.x) , don't run on other Linux distributions if you're not sure what you're doing.**
+In simple terms, with wsltorify you can redirect all traffic of your WSL(Debian deriatives) operating system through the Tor Network.
 
 ### About Tor
 
@@ -49,7 +36,7 @@ For more information about the Transparent Proxy through Tor please read the [To
 Download with `git`:
 
 ```term
-git clone https://github.com/brainfucksec/kalitorify
+git clone https://github.com/sube-trifork/wsltorify.git
 ```
 
 ### Install dependencies:
@@ -57,13 +44,13 @@ git clone https://github.com/brainfucksec/kalitorify
 ```term
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
-sudo apt-get install -y tor curl
+sudo apt-get install -y tor curl make
 ```
 
-### Install kalitorify:
+### Install wsltorify:
 
 ```term
-cd kalitorify/
+cd wsltorify/
 
 sudo make install
 ```
@@ -72,7 +59,7 @@ sudo make install
 
 ## Usage
 
-**Before starting kalitorify:**
+**Before starting wsltorify:**
 
 1 - Make sure you have read the [Security](#security) section.
 
@@ -85,13 +72,13 @@ sudo make install
 **Start transparent proxy through Tor:**
 
 ```term
-kalitorify --tor
+wsltorify --tor
 ```
 
 **Return to clearnet:**
 
 ```term
-kalitorify --clearnet
+wsltorify --clearnet
 ```
 
 ### Commands list:
@@ -128,11 +115,11 @@ kalitorify --clearnet
 
 ## Uninstall
 
-For uninstall kalitorify use `make uninstall` command inside the program git folder:
+For uninstall wsltorify use `make uninstall` command inside the program git folder:
 
 
 ```term
-cd kalitorify/
+cd wsltorify/
 
 sudo make uninstall
 ```
@@ -140,25 +127,25 @@ sudo make uninstall
 Note: If you have deleted the git folder after installation, you can remove the program manually:
 
 ```term
-sudo rm -ri /usr/bin/kalitorify \
-/usr/share/kalitorify \
-/usr/share/doc/kalitorify \
-/var/lib/kalitorify
+sudo rm -ri /usr/bin/wsltorify \
+/usr/share/wsltorify \
+/usr/share/doc/wsltorify \
+/var/lib/wsltorify
 ```
 
 ---
 
 ## Security
 
-### Please read this section carefully before starting kalitorify
+### Please read this section carefully before starting wsltorify
 
-**kalitorify is produced independently from the Tor anonimity software and carries no guarantee from the Tor Project about quality, suitability or anything else, please read these documents to know how to use the Tor network safely:**
+**wsltorify is produced independently from the Tor anonimity software and carries no guarantee from the Tor Project about quality, suitability or anything else, please read these documents to know how to use the Tor network safely:**
 
 [Tor Project FAQ](https://support.torproject.org/faq/)
 
 [Whonix Do Not recommendations](https://www.whonix.org/wiki/DoNot)
 
-**kalitorify is a bash script to start a transparent proxy through Tor to be used for a safe navigation during communications, searches or other activities with Kali Linux, but does not guarantee 100% anonymity.**
+**wsltorify is a bash script to start a transparent proxy through Tor to be used for a safe navigation during communications, searches or other activities with WSL(Debian deriatives), but does not guarantee 100% anonymity.**
 
 About Transparent Torification, please read [Transparent Proxy Leaks](https://gitlab.torproject.org/legacy/trac/-/wikis/doc/TransparentProxyLeaks) (mostly Microsoft Windows related) and/or consider an [Isolating Proxy](https://gitlab.torproject.org/legacy/trac/-/wikis/doc/TorifyHOWTO/IsolatingProxy) as alternative.
 See [Whonix](https://www.whonix.org/) for a complete, ready-made VM based solution (alternatively using multiple physical computers) built around the Isolating Proxy and Transparent Proxy [Anonymizing Middlebox design](https://gitlab.torproject.org/legacy/trac/-/wikis/doc/TransparentProxy#AnonymizingMiddlebox).
@@ -173,7 +160,7 @@ Applications can still learn your computer's hostname, MAC address, serial numbe
 
 See: [ArchWiki: Tor - Transparent Torification](https://wiki.archlinux.org/title/Tor#Transparent_Torification)
 
-**Before run kalitorify you should change at least the hostname and the MAC address:**
+**Before run wsltorify you should change at least the hostname and the MAC address:**
 
 [Setting the Hostname on Debian](https://debian-handbook.info/browse/stable/sect.hostname-name-service.html)
 
@@ -181,9 +168,9 @@ See: [ArchWiki: Tor - Transparent Torification](https://wiki.archlinux.org/title
 
 ---
 
-### Transparent Proxy with kalitorify and Tor Browser
+### Transparent Proxy with wsltorify and Tor Browser
 
-**Don't start Tor Browser when transparent browsing (kalitorify) is active, this to** [avoid Tor over Tor Scenarios](https://www.whonix.org/wiki/DoNot#Allow_Tor_over_Tor_Scenarios).
+**Don't start Tor Browser when transparent browsing (wsltorify) is active, this to** [avoid Tor over Tor Scenarios](https://www.whonix.org/wiki/DoNot#Allow_Tor_over_Tor_Scenarios).
 
 ---
 
@@ -234,7 +221,7 @@ Warning: the example video might refer to an older version.
 ---
 
 ## Credits
-
+* wsltorify is a fork of kalitorify
 * kalitorify is a KISS version of [Parrot AnonSurf Module](https://nest.parrot.sh/packages/tools/anonsurf) of [Parrot OS](https://www.parrotsec.org/). Thank you guys for give me the way in developing this program.
 
 * The realization of this program was possible only with:
@@ -243,32 +230,10 @@ Warning: the example video might refer to an older version.
 
     * The [Whonix](https://www.whonix.org/) Team and their [documentation](https://www.whonix.org/wiki/Documentation)
 
-    * [All the people who contribute](https://github.com/brainfucksec/kalitorify/graphs/contributors)
+    * [All the people who contribute to kalinotify](https://github.com/brainfucksec/kalitorify/graphs/contributors)
 
     * All users who with their reports help to improve this project.
-
-* "KALI LINUX ™" is a trademark of Offensive Security. Please see: https://www.kali.org
 
 * "Tor" is a trademark of The Tor Project, Inc. Please see: https://www.torproject.org
 
 ---
-
-## Donations
-
-Please donate a litte to support my projects:
-
-**Bitcoin**
-
-![.](img/bitcoin.png)
-
-```
-19vqscjZcpa22qScPoQEuHJyyiyKokZ6C3
-```
-
-**Monero**
-
-![.](img/monero.png)
-
-```
-42HrxGUKPzNNJKFguPfFhXQajwNDnhLbogy6EWexWw9Sh5pTumVk7dkcD2PB4MuFgD1m8rnaR3pr1g852BWUTpXaTo9rQyr
-```

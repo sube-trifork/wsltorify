@@ -1,45 +1,10 @@
 #!/usr/bin/env bash
 
-################################################################################
-#                                                                              #
-# kalitorify.sh                                                                #
-#                                                                              #
-# version: 1.29.0                                                              #
-#                                                                              #
-# Kali Linux - Transparent proxy through Tor                                   #
-#                                                                              #
-# Copyright (C) 2015-2022 brainf+ck                                            #
-#                                                                              #
-# Kalitorify is KISS version of Parrot AnonSurf Module of Parrot OS:           #
-# - https://www.parrotsec.org                                                  #
-# - https://nest.parrot.sh/packages/tools/anonsurf                             #
-#                                                                              #
-#                                                                              #
-# GNU GENERAL PUBLIC LICENSE                                                   #
-#                                                                              #
-# This program is free software: you can redistribute it and/or modify         #
-# it under the terms of the GNU General Public License as published by         #
-# the Free Software Foundation, either version 3 of the License, or            #
-# (at your option) any later version.                                          #
-#                                                                              #
-# This program is distributed in the hope that it will be useful,              #
-# but WITHOUT ANY WARRANTY; without even the implied warranty of               #
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                #
-# GNU General Public License for more details.                                 #
-#                                                                              #
-# You should have received a copy of the GNU General Public License            #
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
-#                                                                              #
-################################################################################
-
-
 ## General
 #
 # program information
-readonly prog_name="kalitorify"
-readonly version="1.29.0"
-readonly signature="Copyright (C) 2022 brainf+ck"
-readonly git_url="https://github.com/brainfucksec/kalitorify"
+readonly prog_name="wsltorify"
+readonly git_url="https://github.com/sube-trifork/wsltorify"
 
 # set colors for stdout
 export red="$(tput setaf 1)"
@@ -50,8 +15,8 @@ export b="$(tput bold)"
 export reset="$(tput sgr0)"
 
 ## Directories
-readonly data_dir="/usr/share/kalitorify/data"      # config files
-readonly backup_dir="/var/lib/kalitorify/backups"   # backups
+readonly data_dir="/usr/share/wsltorify/data"      # config files
+readonly backup_dir="/var/lib/wsltorify/backups"   # backups
 
 ## Network settings
 #
@@ -458,7 +423,7 @@ restart() {
 ## Show help menù
 usage() {
     printf "%s\\n" "${prog_name} ${version}"
-    printf "%s\\n" "Kali Linux - Transparent proxy through Tor"
+    printf "%s\\n" "WSL - Transparent proxy through Tor"
     printf "%s\\n\\n" "${signature}"
 
     printf "%s\\n\\n" "Usage: ${prog_name} [option]"
