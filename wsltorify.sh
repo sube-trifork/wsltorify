@@ -257,9 +257,8 @@ check_ip() {
 
     # IP API URLs list
     local url_list=(
-        'https://ipinfo.io/'
-        'https://api.myip.com/'
-        'https://ifconfig.me'
+        'https://ip.tyk.nu/'
+
     )
 
     info "Check public IP address"
